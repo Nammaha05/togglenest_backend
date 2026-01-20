@@ -29,7 +29,7 @@ router.get('/', protect, async (req, res) => {
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
-const protect = async (req, res, next) => {  // ✅ 'next' parameter added
+const protect = async (req, res) => {  
   try {
     let token;
 
@@ -126,5 +126,6 @@ router.delete('/:id', protect, async (req, res) => {
     });
   }
 });
+
 
 module.exports = router;
